@@ -1,0 +1,69 @@
+# List of enchanted items allowed to utilize the plugin
+Allowed-Enchanted-Items:
+  - "DIAMOND_SWORD"
+  - "DIAMOND_AXE"
+  - "DIAMOND_PICKAXE"
+  - "DIAMOND_SHOVEL"
+  - "DIAMOND_HOE"
+  - "DIAMOND_CHESTPLATE"
+  - "DIAMOND_HELMET"
+  - "DIAMOND_LEGGINGS"
+  - "DIAMOND_BOOTS"
+  - "NETHERITE_SWORD"
+  - "NETHERITE_AXE"
+  - "NETHERITE_PICKAXE"
+  - "NETHERITE_SHOVEL"
+  - "NETHERITE_HOE"
+  - "NETHERITE_CHESTPLATE"
+  - "NETHERITE_HELMET"
+  - "NETHERITE_LEGGINGS"
+  - "NETHERITE_BOOTS"
+  - "IRON_SWORD"
+  - "IRON_AXE"
+  - "IRON_PICKAXE"
+  - "IRON_SHOVEL"
+  - "IRON_HOE"
+  - "IRON_CHESTPLATE"
+  - "IRON_HELMET"
+  - "IRON_LEGGINGS"
+  - "IRON_BOOTS"
+  - "GOLDEN_SWORD"
+  - "GOLDEN_AXE"
+  - "GOLDEN_PICKAXE"
+  - "GOLDEN_SHOVEL"
+  - "GOLDEN_HOE"
+  - "GOLDEN_CHESTPLATE"
+  - "GOLDEN_HELMET"
+  - "GOLDEN_LEGGINGS"
+  - "GOLDEN_BOOTS"
+  - "STONE_SWORD"
+  - "STONE_AXE"
+  - "STONE_PICKAXE"
+  - "STONE_SHOVEL"
+  - "STONE_HOE"
+  - "WOODEN_SWORD"
+  - "WOODEN_AXE"
+  - "WOODEN_PICKAXE"
+  - "WOODEN_SHOVEL"
+  - "WOODEN_HOE"
+  - "LEATHER_HELMET"
+  - "LEATHER_CHESTPLATE"
+  - "LEATHER_LEGGINGS"
+  - "LEATHER_BOOTS"
+  - "BOW"
+  - "CROSSBOW"
+  - "TRIDENT"
+  - "FISHING_ROD"
+
+# Should it take an item away when enchantments are taken?
+Use-Item-For-Cost: true
+# When a single enchantment is taken, what item should be charged (only if above true)
+Cost-Item: "LAPIS_LAZULI"
+# Should all enchants on an item be allowed to be taken at once?
+# (NOTE: Works regardless of Use-Item-For-Cost for those who want to have all enchants only)
+Enable-All-Enchants: true
+# When all enchants on item are taken, what should be charged (must be different from above)
+Cost-Item-For-All-Enchants: "LAPIS_BLOCK"
+
+# Destroy item after extraction?
+Destroy-Item: false

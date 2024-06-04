@@ -1,0 +1,4 @@
+name: EnchantmentExtractor
+version: '${version}'
+main: org.infotoast.enchantmentextractor.EnchantmentExtractor
+api-version: '1.20'
