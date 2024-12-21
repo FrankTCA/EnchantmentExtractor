@@ -34,16 +34,16 @@ public class GameEventListener implements Listener {
         return bookItem;
     }
 
-    private Enchantment[] getEnchantmentList(ItemEnchantments enchantments) {
+    private Holder<Enchantment>[] getEnchantmentList(ItemEnchantments enchantments) {
         Iterator encIter = enchantments.entrySet().iterator();
-        ArrayList<Enchantment> encList = new ArrayList<>();
+        ArrayList<Holder<Enchantment>> encList = new ArrayList<>();
         while (encIter.hasNext()) {
             Object2IntMap.Entry<Holder<Enchantment>> entry = (Object2IntMap.Entry) encIter.next();
             Holder<Enchantment> holder = (Holder) entry.getKey();
-            Enchantment enchantment = (Enchantment) holder.value();
-            encList.add(enchantment);
+            //Enchantment enchantment = (Enchantment) holder.value();
+            encList.add(holder);
         }
-        Enchantment[] encArray = encList.toArray(Enchantment[]::new);
+        Holder<Enchantment>[] encArray = encList.toArray(Holder[]::new);
         return encArray;
     }
 
@@ -92,8 +92,8 @@ public class GameEventListener implements Listener {
                     Item bookItem = getBookItem(book, evt);
                     CraftItem bookCraftItem = (CraftItem)bookItem;
                     ItemEntity bookItemEntity = bookCraftItem.getHandle();
-                    Enchantment[] encArray = getEnchantmentList(enchantments);
-                    for (Enchantment enchant : encArray) {
+                    Holder<Enchantment>[] encArray = getEnchantmentList(enchantments);
+                    for (Holder enchant : encArray) {
                         bookItemEntity.getItem().enchant(enchant, enchantments.getLevel(enchant));
                     }
                     EnchantmentHelper.setEnchantments(enchantedItemEntity.getItem(), ItemEnchantments.EMPTY);
@@ -105,9 +105,9 @@ public class GameEventListener implements Listener {
                     Item bookItem = getBookItem(book, evt);
                     CraftItem bookCraftItem = (CraftItem)bookItem;
                     ItemEntity bookItemEntity = bookCraftItem.getHandle();
-                    Enchantment[] encArray = getEnchantmentList(enchantments);
+                    Holder<Enchantment>[] encArray = getEnchantmentList(enchantments);
                     int r = EnchantmentExtractor.rand.nextInt(encArray.length);
-                    Enchantment enchant = encArray[r];
+                    Holder<Enchantment> enchant = encArray[r];
                     bookItemEntity.getItem().enchant(enchant, enchantments.getLevel(enchant));
                     EnchantmentHelper.updateEnchantments(enchantedItemEntity.getItem(), (itemenchantments_a) -> {
                         itemenchantments_a.set(enchant, 0);
